@@ -5,6 +5,10 @@
   * The library should be uploaded to: vendor/php-email-form/php-email-form.php
   * For more info and help: https://bootstrapmade.com/php-email-form/
   */
+  require_once realpath(__DIR__ . "/vendor/autoload.php");
+  use Dotenv\Dotenv;
+  $dotenv = Dotenv::createImmutable(__DIR__);
+  $dotenv->load();
 
   $receiving_email_address = 'izzy.e.khalifa@gmail.com';
 
@@ -27,7 +31,7 @@
   $contact->smtp = array(
     'host' => 'smtp.gmail.com',
     'username' => 'izzy.e.khalifa@gmail.com',
-    'password' => 'sKell-132',
+    'password' => $_ENV['Password'],
     'port' => '465'
   );
 
